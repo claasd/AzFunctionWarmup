@@ -11,9 +11,9 @@ public static class ServiceCollectionExtensions
         where TImplementation : class, IWarmup, TService where TService : class
     {
         if (parallelWarmup)
-            FunctionWarmupExtension.ParallelWarmups.Add(typeof(TService));
+            FunctionWarmup.ParallelWarmups.Add(typeof(TService));
         else
-            FunctionWarmupExtension.OrderedWarmups.Add(typeof(TService));
+            FunctionWarmup.OrderedWarmups.Add(typeof(TService));
         return services.AddSingleton<TService, TImplementation>();
     }
 }
