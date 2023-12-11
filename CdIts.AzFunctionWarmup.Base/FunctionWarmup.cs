@@ -5,7 +5,7 @@ namespace CdIts.AzFunctionWarmup;
 
 public class FunctionWarmup
 {
-    protected FunctionWarmup()
+    public FunctionWarmup()
     {
     }
     public static List<Type> ParallelWarmups { get; } = new();
@@ -15,12 +15,12 @@ public class FunctionWarmup
     {
         var logger = scope.ServiceProvider.GetRequiredService<ILogger<FunctionWarmup>>();
         logger.LogInformation("Beginning Service warmup");
-        foreach (var warmup in FunctionWarmup.OrderedWarmups)
+        foreach (var warmup in OrderedWarmups)
         {
             await Warmup(warmup, scope.ServiceProvider, logger);
         }
 
-        await Task.WhenAll(FunctionWarmup.ParallelWarmups.Distinct().Select(warmup => Warmup(warmup, scope.ServiceProvider, logger)).ToArray());
+        await Task.WhenAll(ParallelWarmups.Distinct().Select(warmup => Warmup(warmup, scope.ServiceProvider, logger)).ToArray());
         logger.LogInformation("Finished Service warmup");
     }
     private static async Task Warmup(Type warmup, IServiceProvider services, ILogger logger)

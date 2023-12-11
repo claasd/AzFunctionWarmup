@@ -3,6 +3,7 @@ using Microsoft.Azure.WebJobs.Description;
 using Microsoft.Azure.WebJobs.Host.Config;
 using Microsoft.Azure.WebJobs.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 [assembly: WebJobsStartup(typeof(FunctionWarmupService), "FunctionWarmupService")]
 
@@ -20,8 +21,9 @@ public class FunctionWarmupExtension : IExtensionConfigProvider
 
     public void Initialize(ExtensionConfigContext context)
     {
-        if (FunctionWarmup.OrderedWarmups.Any() && !FunctionWarmup.OrderedWarmups.Any())
+        if (FunctionWarmup.OrderedWarmups.Count == 0 && FunctionWarmup.ParallelWarmups.Count == 0)
             return;
+
         using var scope = _scopeFactory.CreateScope();
         FunctionWarmup.WarmUpAsync(scope).Wait();
     }

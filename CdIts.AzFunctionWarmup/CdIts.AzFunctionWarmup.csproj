@@ -11,8 +11,8 @@
         <Description>Extension that adds a AddSingletonWithWarmup method to IServiceCollection. This package is for the InProcess worker model. Instances need to implement IWarmup and define a WarmupAsync method. The method is called before azure functions are discovered, but after all dependencies are registered. Supports dependency injection for warmup classes.</Description>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="5.0.0" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="4.0.1" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\CdIts.AzFunctionWarmup.Base\CdIts.AzFunctionWarmup.Base.csproj" />
