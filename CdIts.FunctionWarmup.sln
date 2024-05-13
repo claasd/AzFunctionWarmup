@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionF
 		.github\workflows\publish.yml = .github\workflows\publish.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmokeTest.InProcess", "SmokeTest.InProcess\SmokeTest.InProcess.csproj", "{2423C14D-2A2C-4C2A-83B1-6AE560AAF945}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +33,9 @@ Global
 		{68511098-2192-4E0C-8E92-823BCA49B973}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68511098-2192-4E0C-8E92-823BCA49B973}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68511098-2192-4E0C-8E92-823BCA49B973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2423C14D-2A2C-4C2A-83B1-6AE560AAF945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2423C14D-2A2C-4C2A-83B1-6AE560AAF945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2423C14D-2A2C-4C2A-83B1-6AE560AAF945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2423C14D-2A2C-4C2A-83B1-6AE560AAF945}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
